@@ -1,0 +1,9 @@
+server:
+  port: 9007
+spring:
+  application:
+    name: nacos-sentinel
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 115.29.231.136:8080

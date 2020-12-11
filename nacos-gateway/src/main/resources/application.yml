@@ -1,0 +1,12 @@
+server:
+  port: 9004
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: nacos-producer
+          uri: lb://nacos-producer
+          predicates:
+            - Path=/producer/**
+          filters:
+            - StripPrefix=1
