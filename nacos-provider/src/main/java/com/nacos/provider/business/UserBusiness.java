@@ -8,7 +8,7 @@ import mybatis.base.template.bs.business.IBusiness;
 /**
 * 用户service类
 * @author guos
-* @date 2020/12/11 20:00
+* @date 2020/12/12 16:28
 */
 public interface UserBusiness extends IBusiness<User, UserQuery, UserVO> {
 }

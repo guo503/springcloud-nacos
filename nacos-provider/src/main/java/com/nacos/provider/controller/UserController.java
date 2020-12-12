@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 /**
 * 用户api类
 * @author guos
-* @date 2020/12/11 20:00
+* @date 2020/12/12 16:28
 */
 @RestController
 @RequestMapping("/user")

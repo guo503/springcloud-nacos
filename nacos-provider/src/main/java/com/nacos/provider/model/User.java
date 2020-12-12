@@ -14,7 +14,7 @@ import mybatis.core.annotation.Version;
 /**
 * 用户实体类
 * @author guos
-* @date 2020/12/11 20:00
+* @date 2020/12/12 16:28
 */
 @Table(name = "user")
 @Data
@@ -26,7 +26,7 @@ public class User implements Serializable {
     /**
      * serialVersionUID
      */
-    private static final long serialVersionUID = 865513731477181L;
+    private static final long serialVersionUID = 414799955595262L;
 
     /**
      * 编号

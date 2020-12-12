@@ -3,10 +3,13 @@ server:
 spring:
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
       routes:
-        - id: nacos-producer
-          uri: lb://nacos-producer
+        - id: nacos-producer  #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://nacos-producer # lb 开启负载均衡
           predicates:
-            - Path=/producer/**
+            - Path=/producer/**    #断言,路径相匹配的进行路由
           filters:
             - StripPrefix=1

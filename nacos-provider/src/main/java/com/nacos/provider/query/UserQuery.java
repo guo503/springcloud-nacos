@@ -6,7 +6,7 @@ import lombok.Data;
 /**
 * 用户查询条件类
 * @author guos
-* @date 2020/12/11 20:00
+* @date 2020/12/12 16:28
 */
 @Data
 public class UserQuery {

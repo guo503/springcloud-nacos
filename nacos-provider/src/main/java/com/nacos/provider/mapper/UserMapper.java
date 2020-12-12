@@ -7,7 +7,7 @@ import mybatis.base.mapper.SoftDeleteMapper;
 /**
 * 用户数据访问层
 * @author guos
-* @date 2020/12/11 20:00
+* @date 2020/12/12 16:28
 */
 public interface UserMapper extends Mapper<User>, SoftDeleteMapper<User> {
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
 * 用户业务类
 * @author guos
-* @date 2020/12/11 20:00
+* @date 2020/12/12 16:28
 */
 @Service
 public class UserBusinessImpl extends BusinessImpl<UserService, User, UserQuery, UserVO> implements UserBusiness {
