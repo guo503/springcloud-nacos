@@ -5,7 +5,7 @@
     <parent>
         <artifactId>springcloud-nacos</artifactId>
         <groupId>com.tsyj</groupId>
-        <version>${nacos.parent}</version>
+        <version>1.0.0</version>
     </parent>
     <artifactId>nacos-sentinel</artifactId>
     <version>${nacos.sentinel}</version>

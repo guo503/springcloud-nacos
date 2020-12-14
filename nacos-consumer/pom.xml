@@ -5,7 +5,7 @@
     <parent>
         <artifactId>springcloud-nacos</artifactId>
         <groupId>com.tsyj</groupId>
-        <version>${nacos.parent}</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>nacos-consumer</artifactId>
@@ -26,6 +26,22 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.tsyj</groupId>
+            <artifactId>nacos-common</artifactId>
+            <version>${nacos.common}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tsyj</groupId>
+            <artifactId>nacos-feign</artifactId>
+            <version>${nacos.feign}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
         </dependency>
     </dependencies>
 

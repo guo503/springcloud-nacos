@@ -15,7 +15,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @RefreshScope
 @SpringBootApplication
 @ExtMapperScan({"com.nacos.provider.mapper"})
-@ServletComponentScan
+@ServletComponentScan(basePackages = {"com.nacos.common.config.druid"})
 public class ProviderApplication {
 
     public static void main(String[] args) {

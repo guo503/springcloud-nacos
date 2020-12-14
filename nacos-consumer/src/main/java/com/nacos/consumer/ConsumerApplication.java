@@ -2,7 +2,9 @@ package com.nacos.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableDiscoveryClient
 @SpringBootApplication
+@EnableFeignClients(basePackages = {"com.nacos.feign.service"})
+@ServletComponentScan(basePackages = {"com.nacos.common.config.druid"})
 public class ConsumerApplication {
 
     public static void main(String[] args) {

@@ -7,10 +7,10 @@
         <groupId>com.tsyj</groupId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>nacos-gateway</artifactId>
-    <version>${nacos.gateway}</version>
-    <name>nacos-gateway</name>
-    <description>服务网关gateWay的使用</description>
+    <artifactId>nacos-feign</artifactId>
+    <version>${nacos.feign}</version>
+    <name>nacos-feign</name>
+    <description>服务声明式调用feign</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -18,19 +18,25 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-    </dependencies>
 
+    </dependencies>
 
     <build>
         <plugins>
