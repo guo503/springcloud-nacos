@@ -1,0 +1,476 @@
+demo:
+  name: 牧原demo
+#基础数据配置
+myslc:
+  productId: my-a-ifc-boot-api
+  productName: 智能管链系统
+  version: V1.2.7
+  #场次ID
+  fieldId: 15370728
+  #多场公用工控机
+  fieldIds: '15370728'
+  #场次名称
+  fieldName: 牧原测试
+  #站点编号
+  fieldStationNum: 1
+  #保育自动转育肥日龄
+  conservationHurdAge: 71
+  #泌乳母猪待产期间下料时长
+  sowCutTime: 240
+  #泌乳母猪待产期间清水时长
+  sowClearWater: 0
+  #水料比
+  feedWaterProportion: 300
+  api:
+    #微服务-服务地址
+    serverUrl: https://dev.imuyuan.com
+    #获取token
+    getTokenUrl: /api/auth/jwt/token
+    #根据场区获取批次和饲养员信息
+    getBatchWorkNoUrl: /api/docking/productintegrate/api/batchInfo/selectWorkInfo
+    #根据单元获取批次信息
+    getBatchByUnitUrl: /api/docking/productintegrate/api/batchInfo/getBatchListBySegment
+    #智能饲喂心跳地址
+    ifcHeartbeatUrl: /api/feed_scheduling/noToken/heartBeat/ifc
+    #微服务-根据单元功能码获取加药信息
+    getDosingListByUnitIdUrl: /api/docking/productintegrate/api/dosing/getDosingListByUnitCode
+rabbit:
+  host: 10.106.11.37
+  port: 5672
+  username: guest
+  password: guest
+  scheduled:
+    isopen: 1
+    timer: 0/5 * * * * ?
+  slcPrefix: slc_
+  slcSuffix: .pigform.imy
+  slcFanOutExchange: slcFanOutExchange
+  slcProducerQueue: slc.pigform.imy
+  aggregateFanOutExchange: aggregateFanOutExchange
+  aggregateFeedExchange: aggregateFeedExchange
+  detailFeedExchange: detailFeedExchange
+
+rabbitmq:
+  ## mqtt配置
+  mqtt:
+    username: guest
+    password: guest
+    ## url: tcp://10.106.11.37:11883
+    url: tcp://testmq.imuyuan.com:11883
+    maxInflight: 10000
+    connectionTimeout: 10
+    keepAliveInterval: 20
+    default:
+      topic: topic1
+    client:
+      ## 客户端ID不能相同，否则会导致链接失败
+      id: mqttId555szj37104_dev
+      topic: /feed/register
+      serverToGateway: /feed/servertogateway/
+      gatewayToServer: /feed/gatewaytoserver/
+      qos: 0
+      ## 断连之后，重连的时间间隔 单位s （默认5秒重连）
+      reconnectTime: 10
+
+# 文件上传下载
+file:
+  # 网关升级文件上传的文件夹
+  gatewayUpgradeDirPath: /muyuan/uploadFiles/gateway
+  # 终端升级文件上传的文件夹
+  termUpgradeDirPath: /muyuan/uploadFiles/term
+  # 文件下载的host地址
+  downloadHost: http://localhost:180
+
+
+myqywx:
+  corpid: ww7d751c0944e1ab5f
+  xxzx:
+    agentid: 1000056
+    secret: ILLadvcbfVoZJbovXbavpNTqOaLgR8xXjVFszEWEgt4
+#个业务访问地址
+address:
+  #管链饲料调度模块
+  slc:
+    #管线不能用的中转站仓配置
+    #lineCanNotBeUsed: {"1":"6,7,8","2":"6,7,8","4":"2,3,4,5"}
+    #本场总存栏地址   D400
+    fieldPigCountAddress: 002401
+    #多条管线是否互等  0:跳过   1:互等
+    distributionPlanJump: 0
+    #中转站变频绞龙基数
+    conversionCardinal: 4200
+    #管线每一轮送料检测间隔时间 默认5分钟 300秒
+    pipelineTransportIntervalTime: 300000
+    #每一个暂存仓之间送料间隔时间  默认60秒
+    warehouseTransportIntervalTime: 90000
+    #一级管线传输速率  每米多少Kg
+    firstLevelPipelineRate: 83.3
+    #一级管线传输速度  每秒多少米
+    firstLevelPipelineSpeed: 0.48
+    #读取
+    #管道整体异常标记位地址 M500
+    chainErrDataAddress: 001501
+    #异常检测频率  几毫秒1次，默认5000毫秒(5秒)一次
+    errDetectionTimer: 5000
+    #管道第一节通电状态位 X1   默认X0   00001
+    chainItem1ErrDataAddress: 00001
+    #异常检测塞链故障：请检查是否断链或脱链 起始地址 M500  断链或脱链   读取10位  10跟一级管线
+    chainDisconnectErrDataAddress: 001501
+    chainDisconnectErrDataInfo: 塞链故障：请检查是否断链或脱链
+    #异常检测塞链故障：请检查是否跳闸或热过载 起始地址 M551  断链或脱链   读取10位  10跟一级管线
+    chainOverloadErrDataAddress: 001552
+    chainOverloadErrDataInfo: 塞链故障：请检查是否断链或脱链
+    #控制
+    #管线下料控制起始地址
+    #罐号  D0  罐号|期次|重量
+    flowDownFeedPipelineControlDataAddress: 002001
+    #控制
+    #中转站下料控制起始地址
+    #罐号  haoD100 0-罐号|1-中转仓罐1频率|2-中转仓罐2频率|3-中转仓罐号1||4-中转仓罐号2|5-重量1|6-重量2|7-实际重量1|8-实际重量2|9-状态|10-自动(0)手动(1)
+    flowDownFeedDepotControlDataAddress: 002101
+    #每条管线+20
+    #第二条  D120
+    #flowDownFeedDepotControlDataAddress: 002121
+    #消毒站检测频率  几毫秒1次，默认5000毫秒(5秒)一次
+    xdzDepotDetectionnTimer: 5000
+
+    #读取
+    #中转仓状态数据起始地址 D0     期次|料仓容量|余量|料罐状态|下料位置|...
+    transferWarehouseStatusDataAddress: 2001
+    #中转仓数量
+    transferWarehouseAmount: 10
+    #每个仓数据位数
+    transferWarehouseDataLength: 10
+    #中转站检测频率  几毫秒1次，默认5000毫秒(5秒)一次
+    depotDetectionnTimer: 5000
+    #中转站关键变量日志检测频率  几毫秒1次，默认1000毫秒(1秒)一次
+    depotDetectionnLogTimer: 1000
+
+    #中转站接收饲料记录起始地址    D700      年|月日|时分|同步状态|罐号|期次编码|上料重量
+    periodReceiveAddress: 0002701
+    #中转站接收饲料记录每条数据长度
+    periodReceiveDataLength: 10
+    #中转站接收饲料记录条数
+    periodReceiveDataAmount: 20
+
+    #单元前料罐单片机拉料记录每条数据长度
+    storageReceiveDataLength: 7
+    #单元前料罐单片机拉料记录条数
+    storageReceiveDataAmount: 16352
+
+    #单元前料罐PLC拉料记录每条数据长度
+    storagePlcReceiveDataLength: 10
+    #单元前料罐PLC拉料记录条数
+    storagePlcReceiveDataAmount: 20
+
+    #读取手动打料记录起始地址    D500   年|月日|时分|同步状态|期次编码|单元前料塔功能码|打料重量
+    periodDeliveryAddress: 0002501
+    #手动打料记录每条数据长度
+    periodDeliveryDataLength: 10
+    #手动打料记录条数
+    periodDeliveryDataAmount: 20
+
+    #写入
+    #期次配比数据起始地址  D700  每个期次两位 共10位   6#AB  7#AB  9#BC  10-1BC   10-2BC
+    periodInfoDataAddress: 000101
+
+    #阀门开关控制-开  数据起始位置 M150  每个PLC上面料罐阀门顺序排序     触发写上1, 2秒后再写上0
+    valveSwitchControlOpenDataAddress: 001151
+    #阀门开关控制-关  数据起始位置 M200  每个PLC上面料罐阀门顺序排序   触发写上1, 2秒后再写上0
+    valveSwitchControlOffDataAddress: 001200
+  #环控模块
+  evc:
+    #环控检测频率
+    unitEvcTimer: 60000
+  #物联网模块
+  wlw:
+    wlwTimer: 60000
+  #单元内智能饲喂模块
+  unitFeed:
+    #单元内检测频率  几毫秒1次，默认6000毫秒(6秒)一次
+    unitDetectionnTimer: 6000
+    #单片机通讯等待时间  几毫秒1次，默认5000毫秒
+    unitDetectionnSleepTimer: 5000
+    #读取记录为0时是否直接跳出重头开始  1:从头开始   0:继续读取后面记录
+    unitDetectionnZeroJump: 1
+    #每个料桶打料记录数据长度
+    unitBucketFeedDataLength: 7
+    #料桶打料记录总数  292X56: 16352
+    unitBucketFeedDataCount: 16352
+    #刺激下料量
+    unitFeedStimulateAmount: 750
+  #加药模块
+  seko:
+    bucket:
+      #每个加药数据长度
+      feedDataLength: 7
+      #加药打料记录总数  292X56: 16352
+      feedDataCount: 16352
+      #单元内检测频率  几毫秒1次，默认6000毫秒(6秒)一次
+      detectionnTimer: 6000
+      #单片机通讯等待时间  几毫秒1次，默认5000毫秒
+      detectionnSleepTimer: 5000
+      #读取记录为0时是否直接跳出重头开始
+      detectionnZeroJump: 1
+switch:
+  #项目启动时中转站检测是否开启
+  zzzStationStartIsopen: 0
+  #项目启动时单元前称重检测是否开启
+  storageDetectionnStartIsopen: 0
+  #项目启动时刷新存栏是否开启
+  refreshPigCountStartIsopen: 0
+  #项目启动时消毒站检测是否开启
+  xdzStationStartIsopen: 0
+  #项目启动时单元内检测是否开启
+  unitDetectionnStartIsopen: 0
+  #项目启动时环控是否开启
+  unitEvcStartIsopen: 0
+  #项目启动时物联网是否开启
+  wlwStartIsopen: 0
+  #项目启动时单元加药检测是否开启
+  unitDosingStartIsopen: 0
+
+  #迁移备份数据 开始  0关闭    1打开
+  migrateBackupDataTimerIsopen: 0
+  migrateBackupDataTimer: 0 0 3 * * ?
+
+  #每分钟上报心跳
+  heartBeatTimerIsopen: 0
+  heartBeatTimer: 0 0/1 * * * ?
+
+  #刷新暂存仓对应存栏   每30分钟刷新一次   0 关闭   1打开
+  refreshTemporarystoragePigcountTimerIsopen: 0
+  refreshTemporarystoragePigcountTimer: 0 0/30 * * * ?
+
+  #刷新批次饲养员信息   每天凌晨1:30开始   0 关闭   1打开
+  refreshBatchWorknoTimerIsopen: 0
+  refreshBatchWorknoTimer: 0 30 1 * * ?
+
+  #启动调度   每天凌晨2:00开始   0 关闭   1打开
+  feedSchedulingTimerIsopen: 0
+  feedSchedulingTimer: 0 0 2 * * ?
+
+  #启动饲喂需求计算时间 每天晚上23:00开始  0关闭    1打开
+  feedRequirementTimerIsopen: 0
+  feedRequirementTimer: 0 0 23 * * ?
+
+  #启动刷新饲喂需求计算时间 每一个小时刷新一次 开始  0关闭    1打开
+  feedRefreshRequirementTimerIsopen: 0
+  feedRefreshRequirementTimer: 0 30 0/1 * * ?
+
+  #启动单元存栏为0的需求信息状态置为1 每5分钟刷新一次 开始  0关闭    1打开
+  feedRefreshUnitTimerIsopen: 0
+  feedRefreshUnitTimer: 0 0/5 * * * ?
+
+  #启动--单元内--饲喂需求计算时间 每天晚上23:30开始  0关闭    1打开
+  feedUnitRequirementTimerIsopen: 0
+  feedUnitRequirementTimer: 0 30 23 * * ?
+
+  #启动刷新--单元内--饲喂需求计算时间 每一个小时刷新一次 开始  0关闭    1打开
+  feedRefreshUnitRequirementTimerIsopen: 0
+  feedRefreshUnitRequirementTimer: 0 50 0/1 * * ?
+
+  #启动--单元内--猪圈存栏为0的需求信息状态置为1 每5分钟刷新一次 开始  0关闭    1打开
+  feedRefreshStyIdTimerIsopen: 0
+  feedRefreshStyIdTimer: 0 5/20 * * * ?
+
+  #启动大饲料厂需求汇总 每天凌晨00：05开始  0关闭    1打开
+  feedFactoryRequirementTimerIsopen: 0
+  feedFactoryRequirementTimer: 0 5 0 * * ?
+
+  #统计推送 08:00、12:00、18:00、23:00  0关闭    1打开
+  taskReportTimerIsopen: 0
+  taskReportTimer: 0 0 8,12,18,23 * * ?
+
+  #单元内调度参数下发 01:00、08:00、12:00、16:00
+  taskUnitSchedulingTimerIsopen: 0
+  taskUnitSchedulingTimer: 0 0 1,8,12,16 * * ?
+
+  #单元前称重料塔参数下发 01:00、08:00、12:00、16:00
+  storageSchedulingTimerIsopen: 0
+  storageSchedulingTimer: 0 0 1,8,12,16 * * ?
+
+  #单元饮水加药参数下发 01:00、12:00
+  dosingSchedulingTimerIsopen: 0
+  dosingSchedulingTimer: 0 0 1,12 * * ?
+
+  #单元猪圈记录统计
+  myUnitStyStatIsopen: 0
+  myUnitStyStatTimer: 0 0 0/4 * * ?
+
+  #平均每个单元每天信息统计
+  myFieldUnitDailyStatTimerIsopen: 1
+  myFieldUnitDailyStatTimer: 0 0/1 * * * ?
+
+  #每个批次每天信息统计
+  myFbatchDailyStatTimerIsopen: 1
+  myFbatchDailyStatTimer: 0 0/1 * * * ?
+
+  #每个场区每天信息统计
+  myFieldDailyStatTimerIsopen: 1
+  myFieldDailyStatTimer: 0 0/1 * * * ?
+
+  #每个工段每天信息统计
+  mySegmentDailyStatTimerIsopen: 1
+  mySegmentDailyStatTimer: 0 0/1 * * * ?
+
+  plcStatusReturnHeadquartersIsopen: 1
+  plcStatusReturnHeadquartersWaitingTime: 20
+
+#数据源配置
+spring:
+  redis:
+    ##redis 单机环境配置
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    ssl: false
+    ##redis 集群环境配置
+    #cluster:
+    #  nodes: 127.0.0.1:7001,127.0.0.1:7002,127.0.0.1:7003
+    #  commandTimeout: 5000
+
+  influx:
+    url: http://10.106.11.61:8086
+    user: admin
+    password: admin
+    # 多数据库配置
+    datasource:
+      # 默认使用master库
+      # 数据保存在对用的策略retention_policy之下 不同的策略retention_policy对应不同的数据
+      master:
+        retention_policy: muuyuan
+        retention_policy_time: 999d
+      my_ifc:
+        retention_policy: myifc
+        retention_policy_time: 999d
+
+
+  #排除DruidDataSourceAutoConfigure
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    druid:
+      stat-view-servlet:
+        enabled: true
+        loginUsername: admin
+        loginPassword: zyzy
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+        session-stat-enable: true
+        session-stat-max-count: 10
+    dynamic:
+      druid: #以下是全局默认值，可以全局更改
+        validation-query-timeout: 2000
+        initial-size: 5
+        max-active: 20
+        min-idle: 5
+        max-wait: 60000
+        test-on-borrow: false
+        test-on-return: false
+        test-while-idle: true
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        filters: stat,wall # 注意这个值和druid原生不一致，默认启动了stat,wall
+        #wall:
+        #  noneBaseStatementAllow:
+        #stat:
+        #  merge-sql:
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #设置严格模式,默认false不启动. 启动后在未匹配到指定数据源时候回抛出异常,不启动会使用默认数据源.
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://10.106.12.51:3306/my-a-ifc-boot?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true&connectionCollation=utf8mb4_unicode_ci
+          username: root
+          password: My002714
+          #password: 111111
+          druid: # 以下参数针对每个库可以重新设置druid参数
+            validation-query: select 1  #比如oracle就需要重新设置这个  select 1 FROM DUAL
+        slave_1:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://10.106.12.51:3306/my-a-ifc-boot?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true&connectionCollation=utf8mb4_unicode_ci
+          username: root
+          password: My002714
+          # password: 111111
+          druid: # 以下参数针对每个库可以重新设置druid参数
+            validation-query: select 1  #比如oracle就需要重新设置这个  select 1 FROM DUAL
+        my_slc:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://10.106.12.51:3306/my_slc?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true&connectionCollation=utf8mb4_unicode_ci
+          username: root
+          password: My002714
+          # password: 111111
+          druid: # 以下参数针对每个库可以重新设置druid参数
+            validation-query: select 1  #比如oracle就需要重新设置这个  select 1 FROM DUAL
+        my_unit_evc:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://10.106.12.51:3306/my_unit_evc?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true&connectionCollation=utf8mb4_unicode_ci
+          username: root
+          password: My002714
+          # password: 111111
+          druid: # 以下参数针对每个库可以重新设置druid参数
+            validation-query: select 1  #比如oracle就需要重新设置这个  select 1 FROM DUAL
+        my_wlw:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://10.106.12.51:3306/my_wlw?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true&connectionCollation=utf8mb4_unicode_ci
+          username: root
+          password: My002714
+          # password: 111111
+          druid: # 以下参数针对每个库可以重新设置druid参数
+            validation-query: select 1  #比如oracle就需要重新设置这个  select 1 FROM DUAL
+#oss默认配置
+oss:
+  enabled: true
+  name: qiniu
+  tenant-mode: true
+  endpoint: http://prt1thnw3.bkt.clouddn.com
+  access-key: N_Loh1ngBqcJovwiAJqR91Ifj2vgOWHOf8AwBA_h
+  secret-key: AuzuA1KHAbkIndCU0dB3Zfii2O3crHNODDmpxHRS
+  bucket-name: bladex
+
+
+#muyuan配置
+muyuan:
+  xss:
+    enabled: true
+    skip-url:
+      - /muyuan-chat/weixin
+      - /muyuan-desk/notice/submit
+  secure:
+    skip-url:
+      - /index
+      - /static/**
+      - /blade-test/**
+      - /my-slc/demo/name
+      - /my-slc/demo/dynamic/**
+    client:
+      - client-id: sword
+        path-patterns:
+          - /blade-sword/**
+      - client-id: saber
+        path-patterns:
+          - /blade-saber/**
+  tenant:
+    enhance: true
+    column: tenant_id
+    exclude-tables:
+      - muyuan_user
+
+
+  #分布式锁配置
+  lock:
+    ##是否启用分布式锁
+    enabled: false
+    ##将docker脚本部署的redis服务映射为宿主机ip
+    ##生产环境推荐使用阿里云高可用redis服务并设置密码
+    address: redis://localhost:6379
+    password:
+  #本地文件上传
+  file:
+    remote-mode: true
+    upload-domain: http://localhost:8999
+    remote-path: /usr/share/nginx/html
