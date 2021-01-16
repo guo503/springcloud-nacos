@@ -1,7 +1,9 @@
 package com.nacos.provider.query;
 
-import java.util.Date;
+import com.nacos.common.excel.poi.annotation.ExportConfig;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
 * 用户查询条件类
@@ -18,11 +20,13 @@ public class UserQuery {
     /**
      * 姓名
      */
+    @ExportConfig(value = "姓名")
     private String name;
 
     /**
      * 手机号
      */
+    @ExportConfig(value = "手机号")
     private String phone;
 
     /**
