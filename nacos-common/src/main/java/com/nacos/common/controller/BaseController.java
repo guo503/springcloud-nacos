@@ -109,6 +109,7 @@ public class BaseController<S extends IService<T>, T, R> {
         if (Objects.isNull(t)) {
             throw new RuntimeException("获取实体类失败!");
         }
+        BeanUtils.copyProperties(r,t);
         QueryWrapper<T> wrapper = new QueryWrapper<T>();
         List<Field> fields = this.listField(t);
         for (Field f : fields) {
