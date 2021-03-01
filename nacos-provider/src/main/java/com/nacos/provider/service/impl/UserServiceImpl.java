@@ -1,15 +1,15 @@
 package com.nacos.provider.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.nacos.provider.entity.User;
 import com.nacos.provider.mapper.UserMapper;
-import com.nacos.provider.model.User;
 import com.nacos.provider.service.UserService;
-import mybatis.base.template.bs.service.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
-* 用户service实现类
+* service实现类
 * @author guos
-* @date 2020/12/12 16:28
+* @date 2021/03/01 18:34
 */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {

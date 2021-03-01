@@ -1,8 +1,8 @@
 package com.nacos.consumer.controller;
 
 
+import com.nacos.common.response.Result;
 import com.nacos.consumer.feign.UserServiceFeign;
-import mybatis.base.template.response.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

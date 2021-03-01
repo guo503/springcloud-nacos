@@ -1,13 +1,12 @@
 package com.nacos.provider.mapper;
 
-import com.nacos.provider.model.User;
-import mybatis.base.mapper.Mapper;
-import mybatis.base.mapper.SoftDeleteMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.nacos.provider.entity.User;
 
 /**
-* 用户数据访问层
+* 数据访问层
 * @author guos
-* @date 2020/12/12 16:28
+* @date 2021/03/01 18:34
 */
-public interface UserMapper extends Mapper<User>, SoftDeleteMapper<User> {
+public interface UserMapper extends BaseMapper<User> {
 }

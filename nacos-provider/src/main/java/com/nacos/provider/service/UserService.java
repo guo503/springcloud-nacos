@@ -1,12 +1,12 @@
 package com.nacos.provider.service;
 
-import com.nacos.provider.model.User;
-import mybatis.base.template.bs.service.IService;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.nacos.provider.entity.User;
 
 /**
-* 用户service类
+* service类
 * @author guos
-* @date 2020/12/12 16:28
+* @date 2021/03/01 18:34
 */
 public interface UserService extends IService<User> {
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients(basePackages = {"com.nacos.feign.service"})
-@ServletComponentScan(basePackages = {"com.nacos.common.config.druid"})
+@ServletComponentScan(basePackages = {"com.nacos.common.conf.druid"})
 public class ConsumerApplication {
 
     public static void main(String[] args) {
