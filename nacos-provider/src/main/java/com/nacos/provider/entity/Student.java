@@ -12,38 +12,33 @@ import lombok.NoArgsConstructor;
 /**
 * 实体类
 * @author guos
-* @date 2021/03/03 12:01
+* @date 2021/03/03 12:07
 */
-@TableName("user")
+@TableName("student")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User implements Serializable {
+public class Student implements Serializable {
     
     /**
      * serialVersionUID
      */
-    private static final long serialVersionUID = 396875793553814L;
+    private static final long serialVersionUID = 995149823294518L;
 
     /**
-     * 主键ID
+     * 
      */
     @TableId(type = IdType.AUTO)
     private String id;
 
     /**
-     * 姓名
+     * 
      */
     private String name;
 
     /**
-     * 年龄
+     * 
      */
     private Integer age;
-
-    /**
-     * 邮箱
-     */
-    private String email;
 }

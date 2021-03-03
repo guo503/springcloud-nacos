@@ -1,6 +1,6 @@
 package com.nacos.provider.vo;
 
-import com.nacos.provider.entity.User;
+import com.nacos.provider.entity.Student;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,14 +8,14 @@ import lombok.EqualsAndHashCode;
 /**
 * 显示类
 * @author guos
-* @date 2021/03/03 12:01
+* @date 2021/03/03 12:07
 */
 @EqualsAndHashCode(callSuper = false)
 @Data
-public class UserVO extends User implements Serializable {
+public class StudentVO extends Student implements Serializable {
     
     /**
      * serialVersionUID
      */
-    private static final long serialVersionUID = 773445786572826L;
+    private static final long serialVersionUID = 277797997291684L;
 }

@@ -74,11 +74,26 @@
     </dependencies>
 
 
+
+         <!--
+            spring-boot-maven-plugin
+            这个坑！！！用这个插件打包的Jar包可以直接运行，但是不可依赖！！！
+            所以interface自始至终就没有依赖，自然会说找程序包不存在或者找不到类
+        -->
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--为了解决Unable to find main class的问题，当然，如果写了简单的main函数这几行可以不写-->
+                <executions>
+                    <execution>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <classifier>execute</classifier>
+                </configuration>
             </plugin>
         </plugins>
     </build>

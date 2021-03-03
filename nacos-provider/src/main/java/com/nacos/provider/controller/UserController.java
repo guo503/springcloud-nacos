@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 /**
 * api类
 * @author guos
-* @date 2021/03/01 18:34
+* @date 2021/03/03 12:01
 */
 @RestController
 @RequestMapping("/user")

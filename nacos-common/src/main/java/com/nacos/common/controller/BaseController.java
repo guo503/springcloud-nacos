@@ -48,7 +48,7 @@ public class BaseController<S extends IService<T>, T, R> {
             return Result.success();
         }
         T t = baseService.getById(id);
-        R r = TableParserUtil.getInstance(this.getClass(), 3);
+        R r = TableParserUtil.getInstance(this.getClass(), 2);
         if (Objects.isNull(r)) {
             return Result.success();
         }
@@ -104,23 +104,38 @@ public class BaseController<S extends IService<T>, T, R> {
      * @date 2020/7/28 15:17
      **/
     @GetMapping("/list")
-    public Result<IPage<T>> list(R r) throws IllegalAccessException {
+    public Result<IPage<T>> list(R r) {
+        QueryWrapper<T> wrapper = getQueryWrapper(r);
+        int count = baseService.count(wrapper);
+        if (count == 0) {
+            return Result.success();
+        }
+        Page<T> page = new Page<>(this.getPageNum(), this.getPageSize());
+        IPage<T> pageList = baseService.page(page, wrapper);
+        pageList.setTotal(count);
+        return Result.success(pageList);
+    }
+
+
+    protected QueryWrapper<T> getQueryWrapper(R r) {
         T t = TableParserUtil.getInstance(this.getClass(), 1);
         if (Objects.isNull(t)) {
             throw new RuntimeException("获取实体类失败!");
         }
-        BeanUtils.copyProperties(r,t);
+        BeanUtils.copyProperties(r, t);
         QueryWrapper<T> wrapper = new QueryWrapper<T>();
         List<Field> fields = this.listField(t);
         for (Field f : fields) {
             f.setAccessible(true);
-            if (!StringUtils.isEmpty(f.get(t))) {
-                wrapper.eq(f.getName(), f.get(t));
+            try {
+                if (!StringUtils.isEmpty(f.get(t))) {
+                    wrapper.eq(f.getName(), f.get(t));
+                }
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException("获取属性【" + f.getName() + "】值失败!");
             }
         }
-        Page<T> page = new Page<>(this.getPageNum(), this.getPageSize());
-        IPage<T> pageList = baseService.page(page, wrapper);
-        return Result.success(pageList);
+        return wrapper;
     }
 
 
@@ -128,9 +143,6 @@ public class BaseController<S extends IService<T>, T, R> {
         java.lang.reflect.Field[] declaredFields = obj.getClass().getDeclaredFields();
         List<Field> fields = Arrays.asList(declaredFields);
         fields = fields.stream().filter(f -> Objects.equals(f.getModifiers(), Modifier.PRIVATE) && !Modifier.isStatic(f.getModifiers())).collect(Collectors.toList());
-        for (java.lang.reflect.Field field : fields) {
-            System.out.println(field.getName());
-        }
         return fields;
     }
 
