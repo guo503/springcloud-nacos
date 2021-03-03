@@ -353,3 +353,9 @@
 2021-03-03 12:10:28 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.StudentMapper.selectById - ==>  Preparing: SELECT ID,NAME,AGE FROM student WHERE ID=? 
 2021-03-03 12:10:28 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.StudentMapper.selectById - ==> Parameters: 1(Integer)
 2021-03-03 12:10:28 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.StudentMapper.selectById - <==      Total: 1
+2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG c.nacos.provider.mapper.StudentMapper.selectCount - ==>  Preparing: SELECT COUNT( 1 ) FROM student 
+2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG c.nacos.provider.mapper.StudentMapper.selectCount - ==> Parameters: 
+2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG c.nacos.provider.mapper.StudentMapper.selectCount - <==      Total: 1
+2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG com.nacos.provider.mapper.StudentMapper.selectPage - ==>  Preparing: SELECT ID,NAME,AGE FROM student 
+2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG com.nacos.provider.mapper.StudentMapper.selectPage - ==> Parameters: 
+2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG com.nacos.provider.mapper.StudentMapper.selectPage - <==      Total: 3
