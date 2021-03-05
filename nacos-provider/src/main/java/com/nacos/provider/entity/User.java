@@ -1,13 +1,12 @@
 package com.nacos.provider.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
 * 实体类
@@ -20,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class User implements Serializable {
-    
+
     /**
      * serialVersionUID
      */
@@ -29,7 +28,6 @@ public class User implements Serializable {
     /**
      * 主键ID
      */
-    @TableId(type = IdType.AUTO)
     private String id;
 
     /**

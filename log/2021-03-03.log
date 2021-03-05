@@ -359,3 +359,249 @@
 2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG com.nacos.provider.mapper.StudentMapper.selectPage - ==>  Preparing: SELECT ID,NAME,AGE FROM student 
 2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG com.nacos.provider.mapper.StudentMapper.selectPage - ==> Parameters: 
 2021-03-03 12:10:54 [http-nio-8003-exec-3] DEBUG com.nacos.provider.mapper.StudentMapper.selectPage - <==      Total: 3
+2021-03-03 12:23:15 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-03-03 12:23:15 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-03-03 12:23:15 [Thread-22] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 12:23:15 [Thread-22] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2021-03-03 12:23:15 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2021-03-03 12:23:15 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-03-03 14:53:44 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$be9ee1db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:45 [main] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 14:53:45 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 14:53:45 [main] INFO  com.nacos.provider.ProviderApplication - The following profiles are active: dev
+2021-03-03 14:53:46 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.nacos.provider]' package. Please check your configuration.
+2021-03-03 14:53:46 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8ae37140-dfa1-3477-8536-6f7d74a6bbe0
+2021-03-03 14:53:46 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a284dede] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:46 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:46 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$c134faf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:46 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:46 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:46 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$be9ee1db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:46 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8003 (http)
+2021-03-03 14:53:46 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-03 14:53:46 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-03 14:53:46 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-03-03 14:53:46 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2021-03-03 14:53:46 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2021-03-03 14:53:46 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-03 14:53:46 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-03 14:53:47 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2021-03-03 14:53:47 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-03 14:53:47 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2145 ms
+2021-03-03 14:53:48 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2021-03-03 14:53:48 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2021-03-03 14:53:48 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2,slave} inited
+2021-03-03 14:53:48 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2021-03-03 14:53:48 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 slave 成功
+2021-03-03 14:53:48 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 master 成功
+2021-03-03 14:53:48 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 master
+2021-03-03 14:53:48 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 14:53:48 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 14:53:48 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 14:53:48 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 14:53:48 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 14:53:49 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2021-03-03 14:53:49 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8003"]
+2021-03-03 14:53:49 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8003 (http) with context path ''
+2021-03-03 14:53:49 [main] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - nacos registry, nacos-provider 10.108.220.100:8003 register finished
+2021-03-03 14:53:49 [main] INFO  com.nacos.provider.ProviderApplication - Started ProviderApplication in 5.859 seconds (JVM running for 7.587)
+2021-03-03 14:53:50 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$be9ee1db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 14:53:50 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 14:53:51 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 14:53:51 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - The following profiles are active: dev
+2021-03-03 14:53:51 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - Started application in 1.116 seconds (JVM running for 8.893)
+2021-03-03 14:53:51 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.cloud.endpoint.event.RefreshEventListener - Refresh keys changed: []
+2021-03-03 14:54:36 [http-nio-8003-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-03 14:54:36 [http-nio-8003-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-03-03 14:54:36 [http-nio-8003-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2021-03-03 14:54:36 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==>  Preparing: SELECT COUNT( 1 ) FROM user 
+2021-03-03 14:54:36 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==> Parameters: 
+2021-03-03 14:54:37 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - <==      Total: 1
+2021-03-03 14:54:37 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - ==>  Preparing: SELECT ID,NAME,AGE,EMAIL FROM user 
+2021-03-03 14:54:37 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - ==> Parameters: 
+2021-03-03 14:54:37 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - <==      Total: 5
+2021-03-03 14:55:08 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==>  Preparing: SELECT COUNT( 1 ) FROM user WHERE name = ? 
+2021-03-03 14:55:08 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==> Parameters: xxx(String)
+2021-03-03 14:55:08 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - <==      Total: 1
+2021-03-03 15:01:14 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-03-03 15:01:14 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-03-03 15:01:14 [Thread-22] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 15:01:14 [Thread-22] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2021-03-03 15:01:14 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2021-03-03 15:01:14 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-03-03 15:06:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$39dbc51e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:22 [main] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 15:06:22 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 15:06:22 [main] INFO  com.nacos.provider.ProviderApplication - The following profiles are active: dev
+2021-03-03 15:06:22 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.nacos.provider]' package. Please check your configuration.
+2021-03-03 15:06:22 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8ae37140-dfa1-3477-8536-6f7d74a6bbe0
+2021-03-03 15:06:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1dc1c221] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$875032f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$39dbc51e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:23 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8003 (http)
+2021-03-03 15:06:23 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-03 15:06:23 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-03 15:06:23 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-03-03 15:06:23 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2021-03-03 15:06:23 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2021-03-03 15:06:23 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-03 15:06:23 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-03 15:06:24 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2021-03-03 15:06:24 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-03 15:06:24 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2017 ms
+2021-03-03 15:06:24 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2021-03-03 15:06:24 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2021-03-03 15:06:24 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2,slave} inited
+2021-03-03 15:06:24 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2021-03-03 15:06:24 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 slave 成功
+2021-03-03 15:06:24 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 master 成功
+2021-03-03 15:06:24 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 master
+2021-03-03 15:06:24 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 15:06:24 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 15:06:24 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 15:06:24 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 15:06:25 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 15:06:25 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2021-03-03 15:06:26 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8003"]
+2021-03-03 15:06:26 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8003 (http) with context path ''
+2021-03-03 15:06:27 [main] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - nacos registry, nacos-provider 10.108.220.100:8003 register finished
+2021-03-03 15:06:27 [main] INFO  com.nacos.provider.ProviderApplication - Started ProviderApplication in 6.722 seconds (JVM running for 7.825)
+2021-03-03 15:06:27 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$39dbc51e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:28 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 15:06:28 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 15:06:28 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - The following profiles are active: dev
+2021-03-03 15:06:28 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - Started application in 0.908 seconds (JVM running for 8.834)
+2021-03-03 15:06:28 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.cloud.endpoint.event.RefreshEventListener - Refresh keys changed: []
+2021-03-03 15:06:46 [Thread-24] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-03-03 15:06:46 [Thread-24] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-03-03 15:06:46 [Thread-24] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 15:06:46 [Thread-24] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2021-03-03 15:06:46 [Thread-24] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2021-03-03 15:06:46 [Thread-24] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-03-03 15:06:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1b76933a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:51 [main] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 15:06:51 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 15:06:51 [main] INFO  com.nacos.provider.ProviderApplication - The following profiles are active: dev
+2021-03-03 15:06:52 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.nacos.provider]' package. Please check your configuration.
+2021-03-03 15:06:52 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8ae37140-dfa1-3477-8536-6f7d74a6bbe0
+2021-03-03 15:06:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ff5c903d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$68eb010e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1b76933a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:52 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8003 (http)
+2021-03-03 15:06:52 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-03 15:06:52 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-03 15:06:52 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-03-03 15:06:52 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2021-03-03 15:06:52 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2021-03-03 15:06:52 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-03 15:06:52 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-03 15:06:53 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2021-03-03 15:06:53 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-03 15:06:53 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2110 ms
+2021-03-03 15:06:53 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2021-03-03 15:06:54 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2021-03-03 15:06:54 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2,slave} inited
+2021-03-03 15:06:54 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2021-03-03 15:06:54 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 slave 成功
+2021-03-03 15:06:54 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 master 成功
+2021-03-03 15:06:54 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 master
+2021-03-03 15:06:54 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 15:06:54 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 15:06:54 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 15:06:54 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 15:06:54 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 15:06:54 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2021-03-03 15:06:55 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8003"]
+2021-03-03 15:06:55 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8003 (http) with context path ''
+2021-03-03 15:06:55 [main] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - nacos registry, nacos-provider 10.108.220.100:8003 register finished
+2021-03-03 15:06:55 [main] INFO  com.nacos.provider.ProviderApplication - Started ProviderApplication in 5.788 seconds (JVM running for 6.88)
+2021-03-03 15:06:56 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1b76933a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:06:56 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 15:06:56 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 15:06:56 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - The following profiles are active: dev
+2021-03-03 15:06:56 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - Started application in 0.931 seconds (JVM running for 7.899)
+2021-03-03 15:06:56 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.cloud.endpoint.event.RefreshEventListener - Refresh keys changed: []
+2021-03-03 15:07:16 [http-nio-8003-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-03 15:07:16 [http-nio-8003-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-03-03 15:07:16 [http-nio-8003-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-03-03 15:07:17 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==>  Preparing: SELECT COUNT( 1 ) FROM user WHERE name = ? 
+2021-03-03 15:07:17 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==> Parameters: xxx(String)
+2021-03-03 15:07:17 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - <==      Total: 1
+2021-03-03 15:07:33 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==>  Preparing: SELECT COUNT( 1 ) FROM user 
+2021-03-03 15:07:33 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==> Parameters: 
+2021-03-03 15:07:33 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - <==      Total: 1
+2021-03-03 15:07:33 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - ==>  Preparing: SELECT ID,NAME,AGE,EMAIL FROM user 
+2021-03-03 15:07:33 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - ==> Parameters: 
+2021-03-03 15:07:33 [http-nio-8003-exec-2] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - <==      Total: 5
+2021-03-03 15:08:59 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-03-03 15:08:59 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-03-03 15:08:59 [Thread-22] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 15:08:59 [Thread-22] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2021-03-03 15:08:59 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2021-03-03 15:10:35 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f60c7909] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:36 [main] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 15:10:36 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 15:10:36 [main] INFO  com.nacos.provider.ProviderApplication - The following profiles are active: dev
+2021-03-03 15:10:36 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.nacos.provider]' package. Please check your configuration.
+2021-03-03 15:10:36 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8ae37140-dfa1-3477-8536-6f7d74a6bbe0
+2021-03-03 15:10:36 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d9f2760c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:36 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:36 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$4380e6dd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:36 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:36 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:36 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f60c7909] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:37 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8003 (http)
+2021-03-03 15:10:37 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8003"]
+2021-03-03 15:10:37 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-03 15:10:37 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-03-03 15:10:37 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.14] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2021-03-03 15:10:37 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2021-03-03 15:10:37 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-03 15:10:37 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-03 15:10:38 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2021-03-03 15:10:38 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-03 15:10:38 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2111 ms
+2021-03-03 15:10:38 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2021-03-03 15:10:38 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2021-03-03 15:10:38 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2,slave} inited
+2021-03-03 15:10:38 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 初始共加载 2 个数据源
+2021-03-03 15:10:38 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 slave 成功
+2021-03-03 15:10:38 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 动态数据源-加载 master 成功
+2021-03-03 15:10:38 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 master
+2021-03-03 15:10:38 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 15:10:38 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 15:10:38 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2021-03-03 15:10:38 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-03-03 15:10:38 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 15:10:39 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2021-03-03 15:10:39 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8003"]
+2021-03-03 15:10:39 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8003 (http) with context path ''
+2021-03-03 15:10:40 [main] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - nacos registry, nacos-provider 10.108.220.100:8003 register finished
+2021-03-03 15:10:40 [main] INFO  com.nacos.provider.ProviderApplication - Started ProviderApplication in 5.646 seconds (JVM running for 6.774)
+2021-03-03 15:10:40 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f60c7909] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-03 15:10:41 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.a.nacos.client.NacosPropertySourceBuilder - Loading nacos data, dataId: 'nacos-provider.yaml', group: 'test'
+2021-03-03 15:10:41 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='nacos-provider-dev.yaml'}, NacosPropertySource {name='nacos-provider.yaml'}]}
+2021-03-03 15:10:41 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - The following profiles are active: dev
+2021-03-03 15:10:41 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  org.springframework.boot.SpringApplication - Started application in 0.901 seconds (JVM running for 7.785)
+2021-03-03 15:10:41 [com.alibaba.nacos.client.Worker.longPollingfixed-115.29.231.136_8848] INFO  o.s.cloud.endpoint.event.RefreshEventListener - Refresh keys changed: []
+2021-03-03 15:10:58 [http-nio-8003-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-03 15:10:58 [http-nio-8003-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-03-03 15:10:58 [http-nio-8003-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-03-03 15:10:58 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==>  Preparing: SELECT COUNT( 1 ) FROM user 
+2021-03-03 15:10:58 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - ==> Parameters: 
+2021-03-03 15:10:58 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectCount - <==      Total: 1
+2021-03-03 15:10:58 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - ==>  Preparing: SELECT ID,NAME,AGE,EMAIL FROM user 
+2021-03-03 15:10:58 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - ==> Parameters: 
+2021-03-03 15:10:58 [http-nio-8003-exec-1] DEBUG com.nacos.provider.mapper.UserMapper.selectPage - <==      Total: 5
+2021-03-03 15:11:47 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2021-03-03 15:11:47 [Thread-22] INFO  o.s.c.alibaba.nacos.registry.NacosServiceRegistry - De-registration finished.
+2021-03-03 15:11:47 [Thread-22] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 15:11:47 [Thread-22] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2021-03-03 15:11:47 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2021-03-03 15:11:47 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
