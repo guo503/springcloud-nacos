@@ -13,6 +13,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -43,7 +44,7 @@ public class BaseController<S extends IService<T>, T, R> {
      * @date 2020/7/28 15:09
      **/
     @GetMapping("/{id}")
-    public Result<R> get(@PathVariable("id") Integer id) {
+    public Result<R> get(@PathVariable("id") Serializable id) {
         if (Objects.isNull(id)) {
             return Result.success();
         }
