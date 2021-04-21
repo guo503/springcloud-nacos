@@ -1,5 +1,12 @@
 package com.nacos.provider;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author guos
  * @date 2021/3/1 12:20
@@ -7,11 +14,24 @@ package com.nacos.provider;
 public class Test {
 
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        String content = "content=<?xml version\\=\"1.0\" encoding\\=\"GBK\"?>\\n<configuration debug\\=\"false\">\\n\\t\\n\\t<\\!--\\u5B9A\\u4E49\\u65E5\\u5FD7\\u6587\\u4EF6\\u7684\\u5B58\\u50A8\\u5730\\u5740 \\u52FF\\u5728 LogBack \\u7684\\u914D\\u7F6E\\u4E2D\\u4F7F\\u7528\\u76F8\\u5BF9\\u8DEF\\u5F84 -->\\n\\t<property name\\=\"LOG_HOME\" value\\=\"${XXX_HOME\\:-.}/log\" />\\n\\t\\n\\t<\\!-- \\u63A7\\u5236\\u53F0\\u8F93\\u51FA -->\\n\\t<appender name\\=\"STDOUT\" class\\=\"ch.qos.logback.core.ConsoleAppender\">\\n\\t\\t<encoder class\\=\"ch.qos.logback.classic.encoder.PatternLayoutEncoder\">\\n\\t\\t\\t<\\!--\\u683C\\u5F0F\\u5316\\u8F93\\u51FA\\uFF1A%d\\u8868\\u793A\\u65E5\\u671F\\uFF0C%thread\\u8868\\u793A\\u7EBF\\u7A0B\\u540D\\uFF0C%-5level\\uFF1A\\u7EA7\\u522B\\u4ECE\\u5DE6\\u663E\\u793A5\\u4E2A\\u5B57\\u7B26\\u5BBD\\u5EA6%msg\\uFF1A\\u65E5\\u5FD7\\u6D88\\u606F\\uFF0C%n\\u662F\\u6362\\u884C\\u7B26 -->\\n\\t\\t\\t<pattern>%d{yyyy-MM-dd HH\\:mm\\:ss} %highlight(%-5level) %magenta([%thread]) %cyan(%logger{50}) - %msg%n</pattern>\\n\\t\\t</encoder>\\n\\t</appender>\\n\\t\\n\\t<\\!-- \\u6309\\u7167\\u6BCF\\u5929\\u751F\\u6210\\u65E5\\u5FD7\\u6587\\u4EF6 -->\\n\\t<appender name\\=\"INFO_FILE\" class\\=\"ch.qos.logback.core.rolling.RollingFileAppender\">\\n\\t\\t<filter class\\=\"ch.qos.logback.classic.filter.LevelFilter\">  \\n            <level>INFO</level>  \\n            <onMatch>ACCEPT</onMatch>  \\n            <onMismatch>DENY</onMismatch>  \\n        </filter>  \\n\\t\\t<file>${LOG_HOME}/info.log</file>\\n\\t\\t<rollingPolicy class\\=\"ch.qos.logback.core.rolling.TimeBasedRollingPolicy\">\\n\\t\\t\\t<\\!--\\u65E5\\u5FD7\\u6587\\u4EF6\\u8F93\\u51FA\\u7684\\u6587\\u4EF6\\u540D -->\\n\\t\\t\\t<FileNamePattern>${LOG_HOME}/info.%d{yyyy-MM-dd}.log</FileNamePattern>\\n\\t\\t\\t<\\!--\\u65E5\\u5FD7\\u6587\\u4EF6\\u4FDD\\u7559\\u5929\\u6570 -->\\n\\t\\t\\t<MaxHistory>10</MaxHistory>\\n\\t\\t</rollingPolicy>\\n\\t\\t<encoder class\\=\"ch.qos.logback.classic.encoder.PatternLayoutEncoder\">\\n\\t\\t\\t<\\!--\\u683C\\u5F0F\\u5316\\u8F93\\u51FA\\uFF1A%d\\u8868\\u793A\\u65E5\\u671F\\uFF0C%thread\\u8868\\u793A\\u7EBF\\u7A0B\\u540D\\uFF0C%-5level\\uFF1A\\u7EA7\\u522B\\u4ECE\\u5DE6\\u663E\\u793A5\\u4E2A\\u5B57\\u7B26\\u5BBD\\u5EA6%msg\\uFF1A\\u65E5\\u5FD7\\u6D88\\u606F\\uFF0C%n\\u662F\\u6362\\u884C\\u7B26 -->\\n\\t\\t\\t<pattern>%d{yyyy-MM-dd HH\\:mm\\:ss} [%thread] %-5level %logger{50} - %msg%n</pattern>\\n\\t\\t</encoder>\\n\\t</appender>\\n\\t\\n\\t<\\!-- \\u6309\\u7167\\u6BCF\\u5929\\u751F\\u6210\\u65E5\\u5FD7\\u6587\\u4EF6 -->\\n\\t<appender name\\=\"ERROR_FILE\" class\\=\"ch.qos.logback.core.rolling.RollingFileAppender\">\\n\\t\\t<filter class\\=\"ch.qos.logback.classic.filter.LevelFilter\">  \\n            <level>ERROR</level>  \\n            <onMatch>ACCEPT</onMatch>  \\n            <onMismatch>DENY</onMismatch>  \\n        </filter>  \\n\\t\\t<file>${LOG_HOME}/error.log</file>\\n\\t\\t<rollingPolicy class\\=\"ch.qos.logback.core.rolling.TimeBasedRollingPolicy\">\\n\\t\\t\\t<\\!--\\u65E5\\u5FD7\\u6587\\u4EF6\\u8F93\\u51FA\\u7684\\u6587\\u4EF6\\u540D -->\\n\\t\\t\\t<FileNamePattern>${LOG_HOME}/error.%d{yyyy-MM-dd}.log</FileNamePattern>\\n\\t\\t\\t<\\!--\\u65E5\\u5FD7\\u6587\\u4EF6\\u4FDD\\u7559\\u5929\\u6570 -->\\n\\t\\t\\t<MaxHistory>10</MaxHistory>\\n\\t\\t</rollingPolicy>\\n\\t\\t<encoder class\\=\"ch.qos.logback.classic.encoder.PatternLayoutEncoder\">\\n\\t\\t\\t<\\!--\\u683C\\u5F0F\\u5316\\u8F93\\u51FA\\uFF1A%d\\u8868\\u793A\\u65E5\\u671F\\uFF0C%thread\\u8868\\u793A\\u7EBF\\u7A0B\\u540D\\uFF0C%-5level\\uFF1A\\u7EA7\\u522B\\u4ECE\\u5DE6\\u663E\\u793A5\\u4E2A\\u5B57\\u7B26\\u5BBD\\u5EA6%msg\\uFF1A\\u65E5\\u5FD7\\u6D88\\u606F\\uFF0C%n\\u662F\\u6362\\u884C\\u7B26 -->\\n\\t\\t\\t<pattern>%d{yyyy-MM-dd HH\\:mm\\:ss} [%thread] %-5level %logger{50} - %msg%n</pattern>\\n\\t\\t</encoder>\\n\\t</appender>\\n\\t\\n\\t<\\!--myibatis log configure -->\\n\\t<logger name\\=\"com.apache.ibatis\" level\\=\"TRACE\" />\\n\\t<logger name\\=\"java.sql.Connection\" level\\=\"DEBUG\" />\\n\\t<logger name\\=\"java.sql.Statement\" level\\=\"DEBUG\" />\\n\\t<logger name\\=\"java.sql.PreparedStatement\" level\\=\"DEBUG\" />\\n        <\\!--\\u66FF\\u6362-->\\n         ${logger}\\n\\n\\t<\\!-- \\u65E5\\u5FD7\\u8F93\\u51FA\\u7EA7\\u522B -->\\n\\t<root level\\=\"INFO\">\\n\\t\\t<appender-ref ref\\=\"STDOUT\" />\\n\\t\\t<appender-ref ref\\=\"INFO_FILE\" />\\n\\t\\t<appender-ref ref\\=\"ERROR_FILE\" />\\n\\t</root>\\n\\t\\n</configuration>\n";
-        String[] split = content.split("\\\\n");
-        for (String s : split) {
-            System.out.println(s);
-        }
+    public static void main(String[] args) {
+        String unit = "13903|15417531|13908|8";
+        String bucketId = "13903|15417531|13907|3|1";
+        //System.out.println(unit + "|" + bucketId.substring(bucketId.lastIndexOf('|') + 1));
+        //System.out.println(bucketId.substring(bucketId.lastIndexOf('|') + 1));
+
+        JSONObject a=new JSONObject();
+        a.put("k",1);
+
+        JSONObject b=new JSONObject();
+        b.put("k",0);
+
+        JSONArray array=new JSONArray();
+        array.add(a);
+        array.add(b);
+        List<Object> list = array.stream().sorted(Comparator.comparing(o -> JSONObject.parseObject(o.toString()).getInteger("k"))).collect(Collectors.toList());
+        list.forEach(System.out::println);
+
+        //System.out.println("2020-12".compareTo("2021-1"));
     }
 }

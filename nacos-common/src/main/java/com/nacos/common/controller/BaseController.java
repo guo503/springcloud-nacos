@@ -6,20 +6,15 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.nacos.common.response.Result;
 import com.nacos.common.utils.TableParserUtil;
+import com.nacos.common.utils.WrapperUtil;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * @author guos
@@ -107,13 +102,13 @@ public class BaseController<S extends IService<T>, T, R> {
     @GetMapping("/list")
     public Result<IPage<T>> list(R r) {
         QueryWrapper<T> wrapper = getQueryWrapper(r);
-        int count = baseService.count(wrapper);
-        if (count == 0) {
-            return Result.success();
-        }
+//        int count = baseService.count(wrapper);
+//        if (count == 0) {
+//            return Result.success();
+//        }
         Page<T> page = new Page<>(this.getPageNum(), this.getPageSize());
         IPage<T> pageList = baseService.page(page, wrapper);
-        pageList.setTotal(count);
+        //pageList.setTotal(count);
         return Result.success(pageList);
     }
 
@@ -124,29 +119,8 @@ public class BaseController<S extends IService<T>, T, R> {
             throw new RuntimeException("获取实体类失败!");
         }
         BeanUtils.copyProperties(r, t);
-        QueryWrapper<T> wrapper = new QueryWrapper<T>();
-        List<Field> fields = this.listField(t);
-        for (Field f : fields) {
-            f.setAccessible(true);
-            try {
-                if (!StringUtils.isEmpty(f.get(t))) {
-                    wrapper.eq(f.getName(), f.get(t));
-                }
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException("获取属性【" + f.getName() + "】值失败!");
-            }
-        }
-        return wrapper;
+        return WrapperUtil.getQueryWrapper(t);
     }
-
-
-    protected List<Field> listField(Object obj) {
-        java.lang.reflect.Field[] declaredFields = obj.getClass().getDeclaredFields();
-        List<Field> fields = Arrays.asList(declaredFields);
-        fields = fields.stream().filter(f -> Objects.equals(f.getModifiers(), Modifier.PRIVATE) && !Modifier.isStatic(f.getModifiers())).collect(Collectors.toList());
-        return fields;
-    }
-
 
     protected int getPageNum() {
         return NumberUtils.toInt(this.request.getParameter("pageNum"), 1);

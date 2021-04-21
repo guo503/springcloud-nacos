@@ -70,16 +70,14 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
         </dependency>
-
     </dependencies>
 
 
-
-         <!--
-            spring-boot-maven-plugin
-            这个坑！！！用这个插件打包的Jar包可以直接运行，但是不可依赖！！！
-            所以interface自始至终就没有依赖，自然会说找程序包不存在或者找不到类
-        -->
+    <!--
+       spring-boot-maven-plugin
+       这个坑！！！用这个插件打包的Jar包可以直接运行，但是不可依赖！！！
+       所以interface自始至终就没有依赖，自然会说找程序包不存在或者找不到类
+   -->
     <build>
         <plugins>
             <plugin>
